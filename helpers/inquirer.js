@@ -47,7 +47,7 @@ const inquirerMenu=async()=>{
 
     const {opcion}=await inquirer.prompt(preguntas);
 
-    return opcion;
+    return opcion[0];
 }
 
 
