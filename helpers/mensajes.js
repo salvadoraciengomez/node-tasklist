@@ -1,4 +1,4 @@
-const { resolve } = require('path');
+
 
 require('colors');
 
@@ -8,7 +8,7 @@ const mostraarMenu= async()=>{
 
         console.clear();
         console.log('====================='.green);
-        console.log('SELECCIONE UNA OPCIóN'.green);
+        console.log('SELECCIONE UNA OPCIóN::'.green);
         console.log('=====================\n'.green);
 
         console.log(`${'1'.green} Crear tarea`);

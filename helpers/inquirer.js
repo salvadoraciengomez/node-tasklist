@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const { validate } = require('uuid');
 require('colors');
 
 const preguntas=[
@@ -13,19 +14,19 @@ const preguntas=[
             },
             {
                 vaule: '2',
-                name: '1. Crear tarea'
+                name: '2. Listar tareas'
             },
             {
                 vaule: '3',
-                name: '3. Listar tareas pendientes'
+                name: '3. Listar tareas completadas'
             },
             {
                 vaule: '4',
-                name: '4. Completar tarea(s)'
+                name: '4. Listar tareas pendientes'
             },
             {
                 vaule: '5',
-                name: '5. Limpiar tareas completadas'
+                name: '5. Completar tareas'
             },
             {
                 vaule: '6',
@@ -62,7 +63,24 @@ const pausa=async()=>{
     await inquirer.prompt(question);
 }
 
+const leerInput= async(message)=>{
+    const question=[
+        {
+            type:'input',
+            name: 'desc',
+            message,
+                validate(value){
+                    if (value.length===0) return 'Ingresa un valor';
+                    return true;
+                }
+        }
+    ];
+    const {desc}= inquirer.prompt(question);
+    return desc;
+};
+
 module.exports={
     inquirerMenu,
-    pausa
+    pausa,
+    leerInput
 }
