@@ -44,8 +44,8 @@ const pausa=()=>{
         });
     
         readline.question(`\nPresione ${'ENTER'.green} para continuar\n`, (opt)=>{
-            resolve(opt);
             readline.close();
+            resolve();
         });
     });
 

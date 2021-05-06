@@ -48,7 +48,7 @@ const inquirerMenu=async()=>{
 
     const {opcion}=await inquirer.prompt(preguntas);
 
-    return opcion[0];
+    return opcion;
 }
 
 const pausa=async()=>{
@@ -75,7 +75,7 @@ const leerInput= async(message)=>{
                 }
         }
     ];
-    const {desc}= inquirer.prompt(question);
+    const {desc}= await inquirer.prompt(question);
     return desc;
 };
 
